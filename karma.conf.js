@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/apc-ui-min'),
+      dir: require('path').join(__dirname, './coverage/apc-ui'),
       subdir: '.',
       reporters: [
         { type: 'html' },
