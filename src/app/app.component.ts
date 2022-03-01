@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.mockApiResponse = this.httpClient.get('http://localhost:3000/api/hello', {responseType: 'text'}).pipe(
+    this.mockApiResponse = this.httpClient.get('api/hello', {responseType: 'text'}).pipe(
       catchError((error: HttpErrorResponse) => of(error.message))
     )
   }

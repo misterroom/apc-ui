@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  apc-ui:
+    image: apc-ui
+    build:
+      context: .
+    ports:
+      - "8080:80"
+    networks:
+      - apc-ui
+      - api-mock
+
+  api-mock:
+    image: api-mock
+    build:
+      context: ./api-mock
+    ports:
+      - "3000:3000"
+    networks:
+      - api-mock
+
+networks:
+  apc-ui:
+  api-mock:
