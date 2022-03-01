@@ -1,3 +1,5 @@
+Simple demo application with an angular frontend and node backend build and run with docker and docker-compose.
+
 # build api-mock image to test api calls
 
 additional Dockerfile in api-mock folder
