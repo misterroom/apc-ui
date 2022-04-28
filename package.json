@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-prod": "node --max-old-space-size=1536 ./node_modules/@angular/cli/bin/ng build --configuration=production --outputPath=./dist/apc-ui",
     "watch": "ng build --watch --configuration development"
   },
   "private": true,

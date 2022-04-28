@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
-FROM node:16-alpine
+FROM node:14-alpine
 EXPOSE 3000
 WORKDIR /api-mock
 COPY . .
-RUN npm install
+RUN npm ci
 CMD ["node", "webserver-start.js"]

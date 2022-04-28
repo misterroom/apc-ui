@@ -11,11 +11,6 @@ docker build -t api-mock .
 ```
 
 # build apc client project
-artefact build will be done by APC jenkins
-therefore the resulting artefact with static html is going to be published in nexus repo
-
--> but for now tarball is provided:
-apc-ui.tar.gz
 
 ## build image
 ```

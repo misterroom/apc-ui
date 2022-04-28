@@ -1,9 +1,16 @@
 # syntax=docker/dockerfile:1
+
+# Stage 1: Build an Angular Docker Image
+FROM node:14-alpine as build
+WORKDIR /app
+COPY package*.json /app/
+RUN npm ci
+COPY . /app
+RUN npm run build-prod
+
+# Stage 2
+
 FROM nginx
 # configure reverse proxy
 COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
-
-# create tarball from dist/apc-ui
-# cd dist/apc-ui
-# tar -cvf apc-ui.tar.gz *
-ADD apc-ui.tar.gz /usr/share/nginx/html
+COPY --from=build /app/dist/apc-ui/ /usr/share/nginx/html
